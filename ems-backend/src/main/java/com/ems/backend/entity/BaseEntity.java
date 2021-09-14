@@ -1,18 +1,21 @@
 package com.ems.backend.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import javax.persistence.Column;
+import java.time.LocalDateTime;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class BaseEntity {
+    @Column(name = "CREATED_ON")
+    private LocalDateTime createdOn;
 
-    @Id
-    private Long id;
+    @Column(name = "CREATED_BY")
+    private String createdBy;
+
+    @Column(name = "UPDATED_ON")
+    private LocalDateTime updatedOn;
+
+    @Column(name = "UPDATED_BY")
+    private String updatedBy;
+
+    @Column(name = "IS_DELETED")
+    private Boolean isDeleted;
 }
